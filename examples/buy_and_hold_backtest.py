@@ -1,4 +1,10 @@
 import click
+import sys
+sys.path.append('/Users/cuong/localdev/python/qstrader')
+import matplotlib
+# matplotlib.rcParams['figure.dpi'] = 150
+# matplotlib.use('tkagg')
+matplotlib.use('qt5agg')
 
 from qstrader import settings
 from qstrader.compat import queue
@@ -16,7 +22,7 @@ from qstrader.trading_session.backtest import Backtest
 
 
 def run(config, testing, tickers, filename):
-
+    print(config.CSV_DATA_DIR)
     # Set up variables needed for backtest
     events_queue = queue.Queue()
     csv_dir = config.CSV_DATA_DIR
