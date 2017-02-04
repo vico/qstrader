@@ -1,5 +1,10 @@
 import click
-
+import sys
+sys.path.append('/Users/cuong/localdev/python/qstrader')
+import matplotlib
+# matplotlib.rcParams['figure.dpi'] = 150
+# matplotlib.use('tkagg')
+matplotlib.use('qt5agg')
 from qstrader import settings
 from qstrader.compat import queue
 from qstrader.price_parser import PriceParser
